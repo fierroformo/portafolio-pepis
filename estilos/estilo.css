@@ -1,0 +1,135 @@
+body {
+	background: #000000;
+	font-family: Arial, sans-serif;
+	scrollbar-base-color: orange;
+	scrollbar-arrow-color: green;
+	scrollbar-DarkShadow-Color: blue; 
+}
+
+ul {
+	list-style-type: none;
+    margin: 0px;
+    padding: 0;
+}
+
+li {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	font-family: Arial, sans-serif;
+    font-size: 11pt;
+}
+
+a {
+	display: block;
+	text-align: center;
+	width: 140px;
+	color:#83807E;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #79D25D;
+}
+
+p {
+	color: #C0BF92;
+	font-weight:bold;
+	font-size: 11pt;
+	text-align: justify;
+}
+/*clase para mantener el verde*/
+.pushado {
+	color: #79D25D;
+}
+
+/*DIV */
+#main {
+    display: inline;
+	height: 500px;
+    width: 700px;  
+    position: absolute;
+    top: 50%; /* Buscamos el centro horizontal (relativo) del navegador */
+    left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
+    margin-top: -250px; /* Restamos la mitad de la altura del objeto con un margin-top */
+    margin-left: -350px; /* Restamos la mitad de la anchura del objeto con un margin-left */
+    background:url(../images/fondo3.jpg) repeat;
+}
+
+#menu {
+	background: #3D3633;
+	height: 500px;
+	width: 140px;
+	float: left;
+}
+
+#content {
+	background: #272422;
+	height: 475px;
+	width: 560px;
+	float: right;
+}
+
+#content2 {
+	background:url(../images/floor2.png) no-repeat;
+	height: 25px;
+	width: 560px;
+	float: right;
+}
+
+/*clases de menu */
+#menu .menu {
+	text-transform: uppercase;
+}
+#menu1 {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	background-color:#3D3633;
+}
+#menu2 {
+	background-color:#4E4743;
+}
+#menu3 {
+	background-color:#342E2b;
+}
+#menu4 {
+	background-color:#3D3633;
+}
+#menu5 {
+	background-color:#453F39;
+}
+
+.submenu {
+	display: none;
+	text-transform: lowercase;
+	padding-top: 15px;
+	padding-bottom: 14px;
+}
+
+#sub1 {
+	background-color:#3D3633;
+}
+#sub2 {
+	background-color:#4E4743;
+}
+#sub3 {
+	background-color:#342E2B;
+}
+#sub4 {
+	background-color:#3D3633;
+}
+#sub5 {
+	background-color:#453f39;
+}
+#sub6 {
+	background-color:#3D3633;
+}
+#sub7 {
+	background-color:#4E4743;
+}
+#sub8 {
+	background-color:#342E2B;
+}
+
+
+
