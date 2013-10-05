@@ -1,29 +1,72 @@
 <head>
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#slider2').jqFancyTransitions({ effect: 'wave', width: 240, height: 360, delay: 4000 });
+    <script type="text/javascript">
+    var theInt = null;
+		var $crosslink, $navthumb;
+		var curclicked = 0;
+		
+		theInterval = function(cur){
+			clearInterval(theInt);
+			
+			if( typeof cur != 'undefined' )
+				curclicked = cur;
+			
+			$crosslink.removeClass("active-thumb");
+			$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+		};
+		
+		$(function(){
+			
+			$("#main-photo-slider").codaSlider();
+			
+			$navthumb = $(".nav-thumb");
+			$crosslink = $(".cross-link");
+			
+			$navthumb
+			.click(function() {
+				var $this = $(this);
+				theInterval($this.parent().attr('href').slice(1) - 1);
+				return false;
+			});
+			
+			theInterval();
 		});
     </script>
-	<style type="text/css">
-	div.show {
-		margin: 0px auto;
-		overflow:hidden;
-	}
-	h3 {
-		margin:20px 50px;
-		color: #79D25D;
-	}
-	</style>
 </head>
+
 <body>
-	<h3>Carteles</h3>
-	<div id='slider2' class='show'>
-		<img src="images/carteles/1.jpg" alt="Casa de la Cultura Valparaíso Zacatecas" />
-		<img src="images/carteles/2.jpg" alt="Valores Familiares" />
-		<img src="images/carteles/3.jpg" alt="Valores en la Familia" />
-		<img src="images/carteles/4.jpg" alt="Ballet Folclorico" />
-	</div>
+<h3>Carteles</h3>
+<div id="page-wrap">
+    <div class="slider-wrap">
+		<div id="main-photo-slider" class="csw">
+			<div class="panelContainer">
+                <div class="panel" title="Panel 1">
+					<div class="wrapper">
+						<img src="images/carteles/1.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto"</span>
+						</div>
+					</div>
+				</div>
+                <div class="panel" title="Panel 2">
+					<div class="wrapper">
+						<img src="images/carteles/2.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto numero 2"</span>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        
+        <a href="#1" class="cross-link active-thumb"><img src="images/carteles/t1.jpg" class="nav-thumb" alt="temp-thumb" /></a>
+		<div id="movers-row">
+            <div><a href="#2" class="cross-link"><img src="images/carteles/t2.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+		</div>
+        
+    </div>
+</div>
 
 </body>
-
