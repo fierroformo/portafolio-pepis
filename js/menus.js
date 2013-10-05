@@ -9,7 +9,6 @@ $(document).ready(function()
 		    $('.submenu').delay(300).slideDown(500);
 		}
 	});
-	
 	//ocultar submenus...
 	$("#menu1, #content").mouseover(function(){
 		if( $('.submenu').is(':visible') )
@@ -37,7 +36,6 @@ $(document).ready(function()
 			ban = "bio";
 		}
 	});
-	
 	$("#cur").click(function(){
 		if(ban != "cur")
 		{
@@ -117,5 +115,4 @@ $(document).ready(function()
             ban = "tar";
 		}
 	});
-	
-}); 
+});

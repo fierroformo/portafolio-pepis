@@ -6,6 +6,11 @@ body {
 	scrollbar-DarkShadow-Color: blue; 
 }
 
+h3 {
+    margin:20px 50px;
+    color: #79D25D;
+}
+
 ul {
 	list-style-type: none;
     margin: 0px;
@@ -38,6 +43,7 @@ p {
 	font-size: 11pt;
 	text-align: justify;
 }
+
 /*clase para mantener el verde*/
 .pushado {
 	color: #79D25D;
@@ -81,20 +87,25 @@ p {
 #menu .menu {
 	text-transform: uppercase;
 }
+
 #menu1 {
 	padding-top: 0px;
 	padding-bottom: 0px;
 	background-color:#3D3633;
 }
+
 #menu2 {
 	background-color:#4E4743;
 }
+
 #menu3 {
 	background-color:#342E2b;
 }
+
 #menu4 {
 	background-color:#3D3633;
 }
+
 #menu5 {
 	background-color:#453F39;
 }
@@ -109,27 +120,78 @@ p {
 #sub1 {
 	background-color:#3D3633;
 }
+
 #sub2 {
 	background-color:#4E4743;
 }
+
 #sub3 {
 	background-color:#342E2B;
 }
+
 #sub4 {
 	background-color:#3D3633;
 }
+
 #sub5 {
 	background-color:#453f39;
 }
+
 #sub6 {
 	background-color:#3D3633;
 }
+
 #sub7 {
 	background-color:#4E4743;
 }
+
 #sub8 {
 	background-color:#342E2B;
 }
 
+.floatLeft { float: left; margin-right: 10px;}
+.floatRight	{ float: right; }
+.clear 	{ clear: both; }
 
+#page-wrap {
+    width: 500px;
+    margin: 25px auto;
+    position: relative;
+    min-height: 500px;
+}
 
+/*
+	SLIDER
+*/
+.slider-wrap { width: 419px; position: absolute; top: 20px; left: 40px; }			
+.stripViewer .panelContainer .panel ul { text-align: left; margin: 0 15px 0 30px; }
+.stripViewer { position: relative; overflow: hidden; width: 419px; height: 285px; }
+.stripViewer .panelContainer { position: relative; left: 0; top: 0; }
+.stripViewer .panelContainer .panel	{ float: left; height: 100%; position: relative; width: 419px; }
+.stripNavL, .stripNavR, .stripNav { display: none; }
+.nav-thumb 	{ border: 1px solid black; margin-right: 5px; }
+#movers-row	{ margin: -43px 0 0 62px; }
+#movers-row div	{ width: 20%; float: left; }
+#movers-row div a.cross-link { float: right; }
+.photo-meta-data { background: url(transpBlack.png); padding: 10px; height: 30px; 
+                   margin-top: -50px; position: relative; z-index: 9999; color: white; }
+.photo-meta-data span { font-size: 13px; }
+.cross-link	{
+    display: block;
+    width: 62px;
+    margin-top: -14px; 
+    position: relative;
+    padding-top: 15px;
+    text-decoration: none;
+    z-index: 9999;
+    filter:alpha(opacity=50);
+    -moz-opacity:0.5;
+    -khtml-opacity: 0.5;
+opacity: 0.5;
+}
+.active-thumb {
+    filter:alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}

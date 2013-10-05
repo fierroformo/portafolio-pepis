@@ -1,24 +1,72 @@
 <head>
-	<script>
-	$(document).ready( function(){
-	    $('#slider8').jqFancyTransitions({ effect: 'wave', width: 420, height: 234, delay: 5000 });
-	});
-	</script>
-	<style>
-	div.show {
-		margin: 90px auto;
-	}
-	h3 {
-		margin:20px 50px;
-		color: #79D25D;
-	}
-	</style>
+    <script type="text/javascript">
+    var theInt = null;
+		var $crosslink, $navthumb;
+		var curclicked = 0;
+		
+		theInterval = function(cur){
+			clearInterval(theInt);
+			
+			if( typeof cur != 'undefined' )
+				curclicked = cur;
+			
+			$crosslink.removeClass("active-thumb");
+			$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+		};
+		
+		$(function(){
+			
+			$("#main-photo-slider").codaSlider();
+			
+			$navthumb = $(".nav-thumb");
+			$crosslink = $(".cross-link");
+			
+			$navthumb
+			.click(function() {
+				var $this = $(this);
+				theInterval($this.parent().attr('href').slice(1) - 1);
+				return false;
+			});
+			
+			theInterval();
+		});
+    </script>
 </head>
-<body>
-	<h3>Tarjetas de Presentación</h3>
-	<div id="slider8" class="show">
-		<img src="images/tarjetas/pres.jpg" alt="Tarjetas de Presentación" />
-		<img src="images/tarjetas/pres2.jpg" alt="Tarjetas de Pŕesentación" />
-	</div>
-</body>
 
+<body>
+<h3>Tarjetas de Presentación</h3>
+<div id="page-wrap">
+    <div class="slider-wrap">
+		<div id="main-photo-slider" class="csw">
+			<div class="panelContainer">
+                <div class="panel" title="Panel 1">
+					<div class="wrapper">
+						<img src="images/tarjetas/car.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto"</span>
+						</div>
+					</div>
+				</div>
+                <div class="panel" title="Panel 2">
+					<div class="wrapper">
+						<img src="images/tarjetas/gorditas.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto numero 2"</span>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        
+        <a href="#1" class="cross-link active-thumb"><img src="images/tarjetas/t1.jpg" class="nav-thumb" alt="temp-thumb" /></a>
+		<div id="movers-row">
+            <div><a href="#2" class="cross-link"><img src="images/tarjetas/t2.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+		</div>
+        
+    </div>
+</div>
+
+</body>

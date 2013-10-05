@@ -1,26 +1,72 @@
 <head>
-	<script>
-			$(document).ready( function(){
-				$("#slider5").jqFancyTransitions({ effect: 'wave', width: 420, height: 270, delay: 5000 });
+    <script type="text/javascript">
+    var theInt = null;
+		var $crosslink, $navthumb;
+		var curclicked = 0;
+		
+		theInterval = function(cur){
+			clearInterval(theInt);
+			
+			if( typeof cur != 'undefined' )
+				curclicked = cur;
+			
+			$crosslink.removeClass("active-thumb");
+			$navthumb.eq(curclicked).parent().addClass("active-thumb");
+				$(".stripNav ul li a").eq(curclicked).trigger('click');
+		};
+		
+		$(function(){
+			
+			$("#main-photo-slider").codaSlider();
+			
+			$navthumb = $(".nav-thumb");
+			$crosslink = $(".cross-link");
+			
+			$navthumb
+			.click(function() {
+				var $this = $(this);
+				theInterval($this.parent().attr('href').slice(1) - 1);
+				return false;
 			});
-	</script>
-	<style>
-	div.show {
-		margin: 70px auto;
-	}
-	h3 {
-		margin:20px 50px;
-		color: #79D25D;
-	}
-	</style>
+			
+			theInterval();
+		});
+    </script>
 </head>
-<body>
-	<h3>Logotipos</h3>
-	<div id="slider5" class="show">
-		<img src="images/logos/car.jpg" alt="Club de Autos Valparaíso Zacatecas" />
-        <img src="images/logos/constructora.jpg" alt="Empresa Constructora y de Servicios" />
-	    <img src="images/logos/gorditas.jpg" alt="Negocio de Venta de Gorditas" />
-		<img src="images/logos/reciclar.jpg" alt="Empresa de Reciclaje" />
-	</div>
-</body>
 
+<body>
+<h3>Logotipos</h3>
+<div id="page-wrap">
+    <div class="slider-wrap">
+		<div id="main-photo-slider" class="csw">
+			<div class="panelContainer">
+                <div class="panel" title="Panel 1">
+					<div class="wrapper">
+						<img src="images/logos/car.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto"</span>
+						</div>
+					</div>
+				</div>
+                <div class="panel" title="Panel 2">
+					<div class="wrapper">
+						<img src="images/logos/gorditas.jpg" alt="temp" />
+						<div class="photo-meta-data">
+							CREDITOS DE LA FOTO</a><br />
+							<span>"Titulo al pie de la foto numero 2"</span>
+						</div>
+					</div>
+				</div>
+            </div>
+        </div>
+        
+        <a href="#1" class="cross-link active-thumb"><img src="images/logos/t1.jpg" class="nav-thumb" alt="temp-thumb" /></a>
+		<div id="movers-row">
+            <div><a href="#2" class="cross-link"><img src="images/logos/t2.jpg" class="nav-thumb" alt="temp-thumb" /></a></div>
+		</div>
+        
+    </div>
+</div>
+
+</body>
